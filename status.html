@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>山妍涼語 點餐狀況</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>山妍涼語<small>班級手搖飲點餐</small></h1>
+      <nav>
+        <a href="index.html">點餐</a>
+        <a href="status.html" class="active">點餐狀況</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="row">
+      <div class="block">
+        <h2>統計</h2>
+        <div class="stats">
+          <div class="stat"><b id="sPeople">0</b><span>點餐人數</span></div>
+          <div class="stat"><b id="sCups">0</b><span>總杯數</span></div>
+          <div class="stat"><b id="sTotal">$0</b><span>總金額</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="block">
+        <h2>品項彙總</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>品項</th><th>尺寸</th><th>甜度</th><th>冰塊</th><th>加料</th><th class="num">杯數</th></tr></thead>
+            <tbody id="summary"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="block">
+        <div class="toolbar">
+          <h2 style="margin:0">訂單明細</h2>
+          <button class="btn" id="refresh" type="button">重新整理</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>時間</th><th>姓名</th><th>品項</th><th>尺寸</th><th>甜度</th><th>冰塊</th><th>加料</th><th class="num">數量</th><th class="num">總價</th></tr></thead>
+            <tbody id="orders"><tr><td colspan="9" class="empty">載入中…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>山妍涼語 · 台中市西區美村路一段129號 · 04-23217799</footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/status.js"></script>
+</body>
+</html>

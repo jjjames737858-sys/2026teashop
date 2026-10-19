@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>山妍涼語 班級點餐</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>山妍涼語<small>班級手搖飲點餐</small></h1>
+      <nav>
+        <a href="index.html" class="active">點餐</a>
+        <a href="status.html">點餐狀況</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 第 1 列：菜單 -->
+    <section class="row">
+      <div class="block menu-block">
+        <h2>菜單</h2>
+        <img src="menu.jpg" alt="山妍涼語菜單">
+      </div>
+    </section>
+
+    <!-- 第 2 列：表單 | 價格 -->
+    <section class="row row-2">
+      <div class="block form-block">
+        <h2>點餐表單</h2>
+        <form id="orderForm" novalidate>
+          <fieldset>
+            <legend><label for="name">輸入姓名</label></legend>
+            <input type="text" id="name" name="name" placeholder="例如：王小明" maxlength="20" required autocomplete="off">
+          </fieldset>
+
+          <fieldset>
+            <legend>選擇飲品<span class="hint">★ 為店家推薦</span></legend>
+            <div class="tabs" id="tabs" role="tablist"></div>
+            <div class="drinks" id="drinks"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>尺寸</legend>
+            <div class="chips" id="sizes"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>甜度<span class="hint" id="sugarHint"></span></legend>
+            <div class="chips" id="sugars"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>冰塊</legend>
+            <div class="chips" id="ices"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>加料<span class="hint">可複選</span></legend>
+            <div class="chips" id="toppings"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>數量</legend>
+            <div class="qty">
+              <button type="button" id="minus" aria-label="減少">−</button>
+              <output id="qty">1</output>
+              <button type="button" id="plus" aria-label="增加">+</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <aside class="block price-block">
+        <h2>價格</h2>
+        <ul class="price-list">
+          <li><span>姓名</span><span id="pName">—</span></li>
+          <li><span>飲品</span><span id="pItem">尚未選擇</span></li>
+          <li><span>尺寸單價</span><span id="pUnit">$0</span></li>
+          <li><span>甜度 / 冰塊</span><span id="pSugarIce">—</span></li>
+          <li><span>加料</span><span id="pTop">無</span></li>
+          <li><span>數量</span><span id="pQty">1</span></li>
+        </ul>
+        <div class="total"><span>總計</span><strong id="pTotal">$0</strong></div>
+        <button type="submit" form="orderForm" class="btn" id="submitBtn">送出訂單</button>
+        <div class="msg" id="msg" role="status"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>山妍涼語 · 台中市西區美村路一段129號 · 04-23217799</footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
